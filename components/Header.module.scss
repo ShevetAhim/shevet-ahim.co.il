@@ -1,0 +1,14 @@
+@import "../styles/constants";
+
+.header {
+  background-attachment: scroll, fixed;
+  background-position: top left, top center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+}
+
+.inner {
+  background: rgba($main_color, 0.5);
+  display: inline-block;
+  padding: 3em;
+}

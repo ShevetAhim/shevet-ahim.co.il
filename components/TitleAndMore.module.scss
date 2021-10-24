@@ -1,0 +1,14 @@
+.container {
+  margin: 2rem 0;
+}
+
+@media only screen and (min-width: 600px)  {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button {
+    margin: 0;
+  }
+}

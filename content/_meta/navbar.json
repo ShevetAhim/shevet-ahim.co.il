@@ -1,0 +1,48 @@
+[
+  {
+    "title": "עמוד הבית",
+    "path": "/"
+  },
+  {
+    "title": "עלינו",
+    "path": "/about"
+  },
+  {
+    "title": "אירוח",
+    "items": [
+      {
+        "title": "החאן הלבן",
+        "path": "/accommodations/white-khan"
+      },
+      {
+        "title": "דירת סטודיו",
+        "path": "/accommodations/studio-room"
+      },
+      {
+        "title": "קרון רכבת בריטי משוחזר",
+        "path": "/accommodations/train-carriage"
+      }
+    ]
+  },
+  {
+    "title": "פעילויות",
+    "path": "/activities"
+  },
+  {
+    "title": "כתבות",
+    "items": [
+      {
+        "title": "מהבלוג",
+        "path": "/blog"
+      },
+      {
+        "title": "מהתקשורת",
+        "path": "/news"
+      }
+    ]
+  },
+  {
+    "title": "צור קשר ודרכי הגעה",
+    "path": "/contact"
+  }
+]

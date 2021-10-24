@@ -1,0 +1,22 @@
+@import "../styles/constants.scss";
+
+.title:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px $underline_color;
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
+  transform-origin: 100% 50%;
+}
+
+.card {
+  width: 100%;
+}
+
+.card:hover .title:after {
+  transform: scaleX(1);
+}
+
+.content {
+  color: $dark_text;
+}

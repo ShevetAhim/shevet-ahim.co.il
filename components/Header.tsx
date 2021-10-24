@@ -19,7 +19,7 @@ const Header: VFC<Omit<HeaderProps, "type">> = ({ title, subtitle }) => {
       <div className="hero-body">
         <div className="container has-text-centered">
           <div className={style.inner}>
-            <Image {...nextImageProps("logo-white.png", 250, 90)} />
+            <Image {...nextImageProps("logo-white.png", 250, 90)} alt="Logo" />
             <div className="title is-1 has-text-white p-4">{title}</div>
             <div className="subtitle has-text-white">{subtitle}</div>
           </div>

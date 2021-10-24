@@ -13,6 +13,9 @@ jobs:
           node-version: '16.10.0'
 
       - run: yarn install
+
+      - run: yarn lint
+
       - run: yarn build
         env:
           IMAGE_KIT_PRIVATE_KEY: ${{ secrets.IMAGE_KIT_PRIVATE_KEY }}

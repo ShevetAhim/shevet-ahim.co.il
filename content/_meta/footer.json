@@ -1,14 +1,17 @@
 [
   {
     "link": "https://www.booking.com/hotel/il/galilee-bedouin-camplodge.html",
-    "image": "footer/booking_2021_award.png"
+    "image": "footer/booking_2021_award.png",
+    "alt": "Booking.com Traveller Review Award 2021"
   },
   {
     "link": "https://my.weekend.co.il/%D7%A9%D7%91%D7%98_%D7%90%D7%97%D7%99%D7%9D/",
-    "image": "footer/weekend.jpg"
+    "image": "footer/weekend.jpg",
+    "alt": "Rating at Weekend.co.il"
   },
   {
     "link": "http://www.hostels-israel.com/hostels/galilee-bedouin-camplodge/",
-    "image": "footer/ilh.png"
+    "image": "footer/ilh.png",
+    "alt": "Hostels Israel network"
   }
 ]

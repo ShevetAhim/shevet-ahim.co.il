@@ -21,13 +21,19 @@ const Gallery: VFC<GalleryProps> = ({ sources }) => {
               setSelectedImage(index);
             }}
           >
-            <Image {...nextImageProps(src, 800, 450)} />
+            <Image
+              {...nextImageProps(src, 800, 450)}
+              alt={`Gallery image ${index}`}
+            />
           </a>
         </div>
       ))}
 
       <Dialog open={dialogIsOpen} onClose={close} maxWidth="lg">
-        <Image {...nextImageProps(sources[selectedImage], 800, 450)} />
+        <Image
+          {...nextImageProps(sources[selectedImage], 800, 450)}
+          alt="Gallery image"
+        />
       </Dialog>
     </div>
   );

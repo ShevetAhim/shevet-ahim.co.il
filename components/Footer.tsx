@@ -11,7 +11,10 @@ const Footer: VFC = () => (
           <div className="column is-one-quarter" key={item.link}>
             <div style={{ padding: "1em" }}>
               <a href={item.link} target="_blank" rel="noreferrer">
-                <Image {...nextImageProps(item.image, 650, 450)} />
+                <Image
+                  {...nextImageProps(item.image, 650, 450)}
+                  alt={item.alt}
+                />
               </a>
             </div>
           </div>

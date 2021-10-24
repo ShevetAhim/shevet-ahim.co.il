@@ -11,7 +11,10 @@ const ArticleSummary: VFC<CardProps> = ({ item, children }) => (
   <div className={classNames("media", style.card)}>
     <div className="media-left">
       <figure className="image is-128x128">
-        <Image {...nextImageProps(item.frontmatter.image, 128, 128)} />
+        <Image
+          {...nextImageProps(item.frontmatter.image, 128, 128)}
+          alt={item.frontmatter.title}
+        />
       </figure>
     </div>
     <div className="media-content">

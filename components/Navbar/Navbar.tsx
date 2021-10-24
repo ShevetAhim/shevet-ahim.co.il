@@ -21,8 +21,8 @@ const NavBar: VFC = () => {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
-          <Link href="/">
-            <Image {...nextImageProps("logo.png", 84, 30)} />
+          <Link href="/" passHref>
+            <Image {...nextImageProps("logo.png", 84, 30)} alt="Logo" />
           </Link>
         </div>
 

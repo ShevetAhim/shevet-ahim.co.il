@@ -93,7 +93,7 @@ export type CardProps = {
 
 export type ActivityCardProps = {
   item: Omit<PageContent, "html">;
-}
+};
 
 export type TitleAndMoreProps = {
   title: string;
@@ -120,13 +120,13 @@ export type GalleryProps = {
 
 export type CallToActionProps = {
   image: string;
-}
+};
 
 export type HeadProps = {
   title?: string;
   description?: string;
   image?: string;
-}
+};
 
 // API
 
@@ -165,4 +165,8 @@ export type GetGallery = {
 
 export type ImageKitImage = {
   name: string;
+};
+
+export type FormatDate = {
+  (date: string): string;
 };

@@ -5,6 +5,7 @@ import style from "./Card.module.scss";
 import Linkified from "./Linkified";
 import { CardProps } from "../lib/types";
 import ImageOrYoutube from "./ImageOrYoutube";
+import { formatDate } from "../lib/dateUtils";
 
 const Card: VFC<CardProps> = ({ item, children }) => {
   return (
@@ -27,7 +28,7 @@ const Card: VFC<CardProps> = ({ item, children }) => {
           </div>
           <div className={style.content}>
             {item.frontmatter.date && (
-              <time className="mb-1">{item.frontmatter.date}</time>
+              <time className="mb-1">{formatDate(item.frontmatter.date)}</time>
             )}
             {children}
           </div>

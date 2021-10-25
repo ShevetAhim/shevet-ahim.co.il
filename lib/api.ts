@@ -41,8 +41,8 @@ export const getContent: GetContent = (category, slug) => {
   const raw = fs.readFileSync(path, "utf8");
   const { data, content } = matter(raw);
   const html = marked(content || "");
-  if (data.date && data.date.toLocaleDateString) {
-    data.date = data.date.toLocaleDateString("he");
+  if (data.date && data.date.toJSON) {
+    data.date = data.date.toJSON();
   }
   data.image = data.image || "header.jpg";
   return {

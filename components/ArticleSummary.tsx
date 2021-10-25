@@ -6,6 +6,7 @@ import style from "./ArticleSummary.module.scss";
 import Linkified from "./Linkified";
 import { CardProps } from "../lib/types";
 import { nextImageProps } from "../lib/imageUtils";
+import { formatDate } from "../lib/dateUtils";
 
 const ArticleSummary: VFC<CardProps> = ({ item, children }) => (
   <div className={classNames("media", style.card)}>
@@ -24,7 +25,7 @@ const ArticleSummary: VFC<CardProps> = ({ item, children }) => (
         </div>
         <div className={classNames("content", style.content)}>
           {item.frontmatter.date && (
-            <time className="mb-1">{item.frontmatter.date}</time>
+            <time className="mb-1">{formatDate(item.frontmatter.date)}</time>
           )}
           <div>{children}</div>
         </div>

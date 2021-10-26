@@ -4,8 +4,12 @@ import NextHead from "next/head";
 import { HeadProps } from "../lib/types";
 import meta from "../content/_meta/head.json";
 import { backgroundLoader } from "../lib/imageUtils";
+import { useRouter } from "next/router";
+
+const HOSTNAME = "https://shevet-ahim.co.il";
 
 const Head: VFC<HeadProps> = ({ title, description, image }) => {
+  const router = useRouter();
   const composedTitle = title ? `${meta.titlePrefix} | ${title}` : meta.title;
   const composedDescription = description || meta.description;
   const composedImage = backgroundLoader(image || meta.image, 128, 128);
@@ -18,7 +22,7 @@ const Head: VFC<HeadProps> = ({ title, description, image }) => {
       {/* Open Graph */}
       <meta property="og:title" content={composedTitle} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://shevet-ahim.co.il" />
+      <meta property="og:url" content={HOSTNAME + router.asPath} />
       <meta property="og:image" itemProp="image" content={composedImage} />
       <meta
         property="og:image:secure_url"

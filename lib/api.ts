@@ -2,6 +2,7 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 import marked from "marked";
+import authors from "../content/_meta/authors.json";
 
 import {
   Frontmatter,
@@ -12,6 +13,9 @@ import {
   GetCategory,
   GetGallery,
   ImageKitImage,
+  GetAuthor,
+  Author,
+  AuthorSlug,
 } from "./types";
 
 const contentDirectory = join(process.cwd(), "content");
@@ -44,6 +48,9 @@ export const getContent: GetContent = (category, slug) => {
   if (data.date && data.date.toJSON) {
     data.date = data.date.toJSON();
   }
+  if (data.author && typeof data.author == "string") {
+    data.author = getAuthor(data.author as AuthorSlug);
+  }
   data.image = data.image || "header.jpg";
   return {
     frontmatter: data as Frontmatter,
@@ -51,6 +58,8 @@ export const getContent: GetContent = (category, slug) => {
     fields: { category, slug },
   };
 };
+
+export const getAuthor: GetAuthor = (slug) => authors[slug] as Author;
 
 const compare = <T>(a: T, b: T, sortBy: (x: T) => number) => {
   const resultA = sortBy(a);

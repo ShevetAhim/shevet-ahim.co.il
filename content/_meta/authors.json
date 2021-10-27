@@ -1,0 +1,14 @@
+{
+  "irit": {
+    "name": "אירית גוריון",
+    "image": "authors/irit.jpg"
+  },
+  "izhar": {
+    "name": "יזהר גוריון",
+    "image": "authors/izhar.jpg"
+  },
+  "tom": {
+    "name": "תם גוריון",
+    "image": "authors/tom.jpg"
+  }
+}

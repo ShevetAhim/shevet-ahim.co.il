@@ -15,6 +15,7 @@ export type PageContent = {
 export type Frontmatter = {
   title: string;
   image: string;
+  author?: Author;
   summary?: string;
   youtube_id?: string;
   date?: string;
@@ -23,6 +24,11 @@ export type Frontmatter = {
   duration?: string;
   price?: string;
   gallery?: string;
+};
+
+export type Author = {
+  name: string;
+  image: string;
 };
 
 export type Navbar = NavbarMenu[];
@@ -128,6 +134,11 @@ export type HeadProps = {
   image?: string;
 };
 
+export type PostMetadataProps = {
+  author: Author;
+  date: string;
+};
+
 // API
 
 type SortBy = {
@@ -157,6 +168,12 @@ export type GetContent = {
 
 export type GetCategory = {
   (category: string, qp?: QueryParams): PageContent[];
+};
+
+export type AuthorSlug = "irit" | "izhar" | "tom";
+
+export type GetAuthor = {
+  (slug: AuthorSlug): Author;
 };
 
 export type GetGallery = {

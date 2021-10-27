@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import { ContentPageProps } from "../lib/types";
 import Layout from "./Layout";
 import Gallery from "./Gallery";
+import PostMetadata from "./PostMetadata";
 
 const ContentPage: NextPage<ContentPageProps> = ({ content, children }) => {
   const { frontmatter, html } = content;
@@ -22,6 +23,14 @@ const ContentPage: NextPage<ContentPageProps> = ({ content, children }) => {
       narrow={true}
     >
       <section className="section">
+        {content.frontmatter.author && content.frontmatter.date && (
+          <div className="mb-4">
+            <PostMetadata
+              author={content.frontmatter.author}
+              date={content.frontmatter.date}
+            />
+          </div>
+        )}
         <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
         {content.gallery && <Gallery sources={content.gallery} />}
         {children && <>{children}</>}

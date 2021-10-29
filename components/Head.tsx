@@ -23,12 +23,8 @@ const Head: VFC<HeadProps> = ({ title, description, image }) => {
       <meta property="og:title" content={composedTitle} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={HOSTNAME + router.asPath} />
-      <meta property="og:image" itemProp="image" content={composedImage} />
-      <meta
-        property="og:image:secure_url"
-        itemProp="image"
-        content={composedImage}
-      />
+      <meta property="og:image" content={composedImage} />
+      <meta property="og:image:secure_url" content={composedImage} />
       <meta property="og:description" content={composedDescription} />
 
       {/* Twitter cards */}

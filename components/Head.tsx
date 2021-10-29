@@ -12,7 +12,7 @@ const Head: VFC<HeadProps> = ({ title, description, image }) => {
   const router = useRouter();
   const composedTitle = title ? `${meta.titlePrefix} | ${title}` : meta.title;
   const composedDescription = description || meta.description;
-  const composedImage = backgroundLoader(image || meta.image, 128, 128);
+  const composedImage = backgroundLoader(image || meta.image, 256, 256);
   return (
     <NextHead>
       <title>{composedTitle}</title>

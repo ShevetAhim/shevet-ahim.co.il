@@ -2,6 +2,6 @@
 title: בא לי לטייל למעין יבקע
 date:  2019-07-23
 image: news/ba_li_letayel.jpeg
-link: https://www.baliletayel.co.il/2019/07/blog-post_16.html
+link: https://baliletayel.co.il/israeltrip/%d7%a2%d7%99%d7%9f-%d7%99%d7%91%d7%a7%d7%a2-%d7%9e%d7%a2%d7%99%d7%99%d7%9f-%d7%94%d7%a1%d7%95%d7%a1%d7%99%d7%9d/
 ---
 למי שמתלבט היכן כדאי לישון ולהתרענן בחום, גם גיל אהרוני בבלוג שלו "בא לי לטייל" ממליץ על ביקור במעין הסמוך לשבט ולינה אצלנו.

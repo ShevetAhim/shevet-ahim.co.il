@@ -1,5 +1,5 @@
 ---
-title: סיפור וארוחה אצלינו בשבט אחים
+title: סיפור וארוחה אצלנו בשבט אחים
 image: activities/talk_and_lunch.jpg
 price: 150 ש"ח לאדם
 duration: שעתיים

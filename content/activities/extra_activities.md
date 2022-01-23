@@ -1,8 +1,11 @@
 ---
 title: אפשרויות נוספות
 image: activities/extra_activities.jpg
-gallery: extra_activities
 order: 4
+galleries:
+  - extra_activities_weaving_workshop
+  - extra_activities_meeting_tabash_women
+  - extra_activities_traditional_bedouin_medicine
 ---
 לכל הסיורים והסדנאות אפשר להוסיף אי אלו מהפעילויות הבאות.
 
@@ -29,12 +32,16 @@ order: 4
 - מחיר: 85 ש"ח לאדם
 - משך הסדנא כשעתיים
 
+<Gallery name="extra_activities_weaving_workshop" />
+
 # מפגש עם נשים מהכפר
 
 נשמע את סיפורן של מלכה וספאא, סיפור מעניין של 2 נשים מהכפר, על חייהן בעבר ובהווה.
 
 - מחיר: 50 ש"ח לאדם
 - משך השיחה כשעה
+
+<Gallery name="extra_activities_meeting_tabash_women" />
 
 # טקס קפה
 
@@ -51,6 +58,8 @@ order: 4
 
 - מחיר: 50 ש"ח לאדם
 - משך המפגש כשעה
+
+<Gallery name="extra_activities_traditional_bedouin_medicine" />
 
 # ארוחת בוקר מקומית אצל מלכה בבית
 

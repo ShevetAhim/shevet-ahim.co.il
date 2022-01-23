@@ -5,16 +5,22 @@ export type PagePath = {
   slug: string;
 };
 
+export type Gallery = string[]
+
+export type Galleries = {
+  [name: string]: Gallery;
+};
+
 export type PageContent = {
   frontmatter: Frontmatter;
-  html: string;
+  markdown: string;
   fields: { category: string; slug: string };
-  gallery?: string[];
 };
 
 export type Frontmatter = {
   title: string;
   image: string;
+  galleries: string[];
   author?: Author;
   summary?: string;
   youtube_id?: string;
@@ -60,7 +66,9 @@ export type BlogAndNewsProps = {
 };
 
 export type ContentPageProps = {
-  content: PageContent;
+  frontmatter: Frontmatter;
+  mdxSource: any;
+  galleries: Galleries;
   children?: ReactNode;
 };
 
@@ -121,7 +129,7 @@ export type VideoProps = {
 };
 
 export type GalleryProps = {
-  sources: string[];
+  name: string;
 };
 
 export type CallToActionProps = {
@@ -177,7 +185,7 @@ export type GetAuthor = {
 };
 
 export type GetGallery = {
-  (name: string): Promise<string[]>;
+  (name: string): Promise<Gallery>;
 };
 
 export type ImageKitImage = {

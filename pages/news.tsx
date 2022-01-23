@@ -10,7 +10,7 @@ const News: VFC<BlogAndNewsProps> = (props) => (
   <ArticleList
     title={meta.title}
     items={props.items}
-    summaryFunc={(item) => item.html}
+    summaryFunc={(item) => item.markdown}
   />
 );
 

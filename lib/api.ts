@@ -43,18 +43,18 @@ export const getAllContentPaths: GetAllContentPaths = () =>
 export const getContent: GetContent = (category, slug) => {
   const path = join(contentDirectory, category, unslugify(slug) + ".md");
   const raw = fs.readFileSync(path, "utf8");
-  const { data, content } = matter(raw);
-  const html = marked(content || "");
-  if (data.date && data.date.toJSON) {
-    data.date = data.date.toJSON();
+  const { data: frontmatter, content: markdown } = matter(raw);
+  if (frontmatter.date && frontmatter.date.toJSON) {
+    frontmatter.date = frontmatter.date.toJSON();
   }
-  if (data.author && typeof data.author == "string") {
-    data.author = getAuthor(data.author as AuthorSlug);
+  if (frontmatter.author && typeof frontmatter.author == "string") {
+    frontmatter.author = getAuthor(frontmatter.author as AuthorSlug);
   }
-  data.image = data.image || "header.jpg";
+  frontmatter.image = frontmatter.image || "header.jpg";
+  frontmatter.galleries = frontmatter.galleries || [];
   return {
-    frontmatter: data as Frontmatter,
-    html: html,
+    frontmatter: frontmatter as Frontmatter,
+    markdown,
     fields: { category, slug },
   };
 };

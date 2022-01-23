@@ -8,8 +8,8 @@ import ContentPage from "../components/ContentPage";
 import ContactForm from "../components/ContactForm";
 import Map from "../components/Map";
 
-const Contact: NextPage<ContentPageProps> = ({ content }) => (
-  <ContentPage content={content}>
+const Contact: NextPage<ContentPageProps> = (props) => (
+  <ContentPage {...props}>
     <ContactForm />
     <br />
     <Map />

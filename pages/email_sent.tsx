@@ -6,8 +6,8 @@ import { getContent } from "../lib/api";
 import { ContentPageProps } from "../lib/types";
 import ContentPage from "../components/ContentPage";
 
-const EmailSent: NextPage<ContentPageProps> = ({ content }) => (
-  <ContentPage content={content} />
+const EmailSent: NextPage<ContentPageProps> = (props) => (
+  <ContentPage {...props} />
 );
 
 // This function gets called at build time

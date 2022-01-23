@@ -1,13 +1,15 @@
 import React from "react";
 import type { NextPage } from "next";
+import { MDXRemote } from 'next-mdx-remote'
 
 import { ContentPageProps } from "../lib/types";
 import Layout from "./Layout";
 import Gallery from "./Gallery";
 import PostMetadata from "./PostMetadata";
+import { GalleriesContext } from "../lib/contexts";
 
-const ContentPage: NextPage<ContentPageProps> = ({ content, children }) => {
-  const { frontmatter, html } = content;
+const ContentPage: NextPage<ContentPageProps> = (props) => {
+  const { frontmatter, mdxSource, galleries, children } = props
   return (
     <Layout
       top={{
@@ -23,17 +25,21 @@ const ContentPage: NextPage<ContentPageProps> = ({ content, children }) => {
       narrow={true}
     >
       <section className="section">
-        {content.frontmatter.author && content.frontmatter.date && (
+        {frontmatter.author && frontmatter.date && (
           <div className="mb-4">
             <PostMetadata
-              author={content.frontmatter.author}
-              date={content.frontmatter.date}
+              author={frontmatter.author}
+              date={frontmatter.date}
             />
           </div>
         )}
-        <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
-        {content.gallery && <Gallery sources={content.gallery} />}
-        {children && <>{children}</>}
+        <GalleriesContext.Provider value={galleries}>
+          <div className="content">
+            <MDXRemote {...mdxSource} components={{Gallery}} />
+          </div>
+          {frontmatter.gallery && <Gallery name={frontmatter.gallery} />}
+          {children && <>{children}</>}
+        </GalleriesContext.Provider>
       </section>
     </Layout>
   );

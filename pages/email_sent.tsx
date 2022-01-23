@@ -12,7 +12,7 @@ const EmailSent: NextPage<ContentPageProps> = (props) => (
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => ({
-  props: { content: getContent("_pages", "email_sent") },
+  props: { ...await getContent("_pages", "email_sent") },
 });
 
 export default EmailSent;

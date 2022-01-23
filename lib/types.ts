@@ -14,6 +14,7 @@ export type Galleries = {
 export type PageContent = {
   frontmatter: Frontmatter;
   markdown: string;
+  mdxSource: any;
   fields: { category: string; slug: string };
 };
 
@@ -173,11 +174,11 @@ export type GetAllContentPaths = {
 };
 
 export type GetContent = {
-  (category: string, slug: string): PageContent;
+  (category: string, slug: string): Promise<PageContent>;
 };
 
 export type GetCategory = {
-  (category: string, qp?: QueryParams): PageContent[];
+  (category: string, qp?: QueryParams): Promise<PageContent[]>;
 };
 
 export type AuthorSlug = "irit" | "izhar" | "tom";

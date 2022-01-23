@@ -6,13 +6,13 @@ import { getContent } from "../lib/api";
 import { ContentPageProps } from "../lib/types";
 import ContentPage from "../components/ContentPage";
 
-const About: NextPage<ContentPageProps> = (props) => (
-  <ContentPage {...props} />
-);
+const About: NextPage<ContentPageProps> = (props) => {
+  return <ContentPage {...props} />
+};
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => ({
-  props: { content: getContent("_pages", "about") },
+  props: { ...await getContent("_pages", "about") },
 });
 
 export default About;

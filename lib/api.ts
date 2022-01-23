@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import marked from "marked";
+import { serialize } from "next-mdx-remote/serialize"
 import authors from "../content/_meta/authors.json";
 
 import {
@@ -40,10 +40,11 @@ export const getAllContentPaths: GetAllContentPaths = () =>
     getSlugs(category).map((slug) => ({ category, slug }))
   );
 
-export const getContent: GetContent = (category, slug) => {
+export const getContent: GetContent = async (category, slug) => {
   const path = join(contentDirectory, category, unslugify(slug) + ".md");
   const raw = fs.readFileSync(path, "utf8");
   const { data: frontmatter, content: markdown } = matter(raw);
+  const mdxSource = await serialize(markdown)
   if (frontmatter.date && frontmatter.date.toJSON) {
     frontmatter.date = frontmatter.date.toJSON();
   }
@@ -54,6 +55,7 @@ export const getContent: GetContent = (category, slug) => {
   frontmatter.galleries = frontmatter.galleries || [];
   return {
     frontmatter: frontmatter as Frontmatter,
+    mdxSource,
     markdown,
     fields: { category, slug },
   };
@@ -77,9 +79,9 @@ const mySort = <T, K>(array: T[], sortBy: (x: T) => number) => {
   array.sort((a, b) => compare(a, b, sortBy));
 };
 
-export const getCategory: GetCategory = (category, qp) => {
+export const getCategory: GetCategory = async (category, qp) => {
   const slugs = getSlugs(category);
-  const contents = slugs.map((slug) => getContent(category, slug));
+  const contents = await Promise.all(slugs.map(async (slug) => getContent(category, slug)));
   const sortBy = qp?.sortBy;
   if (sortBy) {
     mySort(contents, sortBy);

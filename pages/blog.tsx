@@ -18,7 +18,7 @@ const Blog: VFC<BlogAndNewsProps> = (props) => (
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
-      items: getCategory("blog", {
+      items: await getCategory("blog", {
         sortBy: (a) => -1 * Date.parse(a.frontmatter.date || "1970"),
       }),
     },

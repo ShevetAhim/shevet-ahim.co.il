@@ -18,7 +18,7 @@ const Contact: NextPage<ContentPageProps> = (props) => (
 
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => ({
-  props: { content: getContent("_pages", "contact") },
+  props: { ...await getContent("_pages", "contact") },
 });
 
 export default Contact;

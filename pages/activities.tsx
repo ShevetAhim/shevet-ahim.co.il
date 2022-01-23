@@ -38,7 +38,7 @@ const Activities: VFC<ActivitiesProps> = (props) => (
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
-      activities: getCategory("activities", {
+      activities: await getCategory("activities", {
         sortBy: (a) => a.frontmatter.order || 0,
       }),
     },

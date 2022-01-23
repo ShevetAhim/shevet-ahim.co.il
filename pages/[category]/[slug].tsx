@@ -1,7 +1,6 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import type { NextPage } from "next";
-import { serialize } from "next-mdx-remote/serialize"
 
 import { getAllContentPaths, getContent, getGallery } from "../../lib/api";
 import { PagePath, ContentPageProps, Galleries } from "../../lib/types";
@@ -14,8 +13,7 @@ const CategorySlugPage: NextPage<ContentPageProps> = (props) => (
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async (context) => {
   const params = context.params as PagePath;
-  const content = getContent(params.category, params.slug);
-  const mdxSource = await serialize(content.markdown)
+  const content = await getContent(params.category, params.slug);
   const galleries = {} as Galleries;
   if (content.frontmatter.gallery) {
     content.frontmatter.galleries.push(content.frontmatter.gallery)
@@ -24,7 +22,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     galleries[name] = await getGallery(name);
   }
   return {
-    props: { frontmatter: content.frontmatter, mdxSource, galleries },
+    props: {
+      frontmatter: content.frontmatter,
+      mdxSource: content.mdxSource,
+      galleries,
+    },
   };
 };
 

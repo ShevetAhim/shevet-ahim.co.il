@@ -70,7 +70,7 @@ const Index: NextPage<IndexProps> = (props) => (
           />
           {props.news.map((item) => (
             <ArticleSummary item={item} key={item.fields.slug}>
-              <div dangerouslySetInnerHTML={{ __html: item.html }} />
+              <div dangerouslySetInnerHTML={{ __html: item.markdown }} />
             </ArticleSummary>
           ))}
         </div>
@@ -83,18 +83,18 @@ const Index: NextPage<IndexProps> = (props) => (
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
-      accommodations: getCategory("accommodations", {
+      accommodations: await getCategory("accommodations", {
         sortBy: (a) => a.frontmatter.order || 0,
       }),
-      activities: getCategory("activities", {
+      activities: await getCategory("activities", {
         sortBy: (a) => a.frontmatter.order || 0,
         limit: 3,
       }),
-      blog: getCategory("blog", {
+      blog: await getCategory("blog", {
         sortBy: (a) => -1 * Date.parse(a.frontmatter.date || "1970"),
         limit: 4,
       }),
-      news: getCategory("_news", {
+      news: await getCategory("_news", {
         sortBy: (a) => -1 * Date.parse(a.frontmatter.date || "1970"),
         limit: 4,
       }),

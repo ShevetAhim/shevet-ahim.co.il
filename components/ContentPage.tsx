@@ -7,6 +7,7 @@ import Layout from "./Layout";
 import Gallery from "./Gallery";
 import PostMetadata from "./PostMetadata";
 import { GalleriesContext } from "../lib/contexts";
+import ActivityMetadata from "./ActivityMetadata";
 
 const ContentPage: NextPage<ContentPageProps> = (props) => {
   const { frontmatter, mdxSource, galleries, children } = props
@@ -37,6 +38,14 @@ const ContentPage: NextPage<ContentPageProps> = (props) => {
           <div className="content">
             <MDXRemote {...mdxSource} components={{Gallery}} />
           </div>
+          {(frontmatter.duration || frontmatter.price) && (
+            <div className="mb-4">
+              <ActivityMetadata
+                duration={frontmatter.duration}
+                price={frontmatter.price}
+              />
+            </div>
+          )}
           {frontmatter.gallery && <Gallery name={frontmatter.gallery} />}
           {children && <>{children}</>}
         </GalleriesContext.Provider>

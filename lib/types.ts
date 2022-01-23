@@ -109,6 +109,8 @@ export type ActivityCardProps = {
   item: Omit<PageContent, "html">;
 };
 
+export type ActivityMetadataProps = Pick<Frontmatter, "duration" | "price">;
+
 export type TitleAndMoreProps = {
   title: string;
   subtitle?: string;

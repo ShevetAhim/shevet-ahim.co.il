@@ -7,6 +7,7 @@ galleries:
   - extra_activities_meeting_tabash_women
   - extra_activities_traditional_bedouin_medicine
 ---
+
 לכל הסיורים והסדנאות אפשר להוסיף אי אלו מהפעילויות הבאות.
 
 # סיור ליקוט
@@ -29,7 +30,7 @@ galleries:
 
 נפגוש את אום וויפקי שתלמד אותנו לקלוע / לארוג. נהנה משעתיים של יצירה באווירה בדואית אותנטית עם סיפורים מלא החופן.
 
-- מחיר: 85 ש"ח לאדם
+- מחיר: 125 ש"ח לאדם
 - משך הסדנא כשעתיים
 
 <Gallery name="extra_activities_weaving_workshop" />

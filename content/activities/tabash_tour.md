@@ -1,7 +1,7 @@
 ---
 title: סיור להכרת אורח החיים בכפר הבדואי טבאש
 image: activities/tabash_tour.jpg
-price: 230 ש"ח לאדם
+price: 260 ש"ח לאדם
 duration: ארבע שעות
 order: 1
 gallery: tabash_tour

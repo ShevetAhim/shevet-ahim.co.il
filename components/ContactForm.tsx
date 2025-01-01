@@ -22,6 +22,7 @@ const ContactForm = () => (
           type="email"
           placeholder={meta.email}
           name="_replyto"
+          required
         />
       </div>
     </div>

@@ -1,7 +1,7 @@
 ---
 title: אפשרויות נוספות
 image: activities/extra_activities.jpg
-order: 4
+order: 5
 galleries:
   - extra_activities_weaving_workshop
   - extra_activities_meeting_tabash_women
@@ -9,13 +9,6 @@ galleries:
 ---
 
 לכל הסיורים והסדנאות אפשר להוסיף אי אלו מהפעילויות הבאות.
-
-# סיור ליקוט
-
-נצא לטבע לאסוף מצמחי העונה הראויים למאכל. בסיום הסיור נחזור לשבט אחים להכין מטעמים ממה שליקטנו.
-
-- מחיר: 250 ש"ח לאדם
-- משך הפעילות כ- 4 שעות
 
 # שירת רועים ושירי גליל בציבור
 

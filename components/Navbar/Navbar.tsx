@@ -67,12 +67,6 @@ const NavBar: VFC = () => {
               >
                 <FaInstagram size="2em" />
               </a>
-              <a
-                className="button"
-                href="https://galilee-bedouin-camplodge.com"
-              >
-                English
-              </a>
             </div>
           </div>
         </div>
